@@ -32,9 +32,14 @@ Projeto desenvolvido com finalidade de demonstração de habilidade em desenvolv
   
 <h4>Banco de dados</h4>
 <p>&nbsp
-  A escolha do SQLite3 foi apenas em quesito praticidade aplicada ao tamanho do projeto, em uma escala maior o mais indicado seria migrar para um banco de dados profissional no qual se comporta de melhor maneira quando se trata de larga escala em volume de dados e multiprocessos como SQL Server, Oracle, Postgree entre outros.
-  
-  
+  A escolha do <b>SQLite3</b> foi apenas em quesito praticidade aplicada ao tamanho do projeto, em uma escala maior o mais indicado seria migrar para um banco de dados profissional no qual se comporta de melhor maneira quando se trata de larga escala em volume de dados e multiprocessos como SQL Server, Oracle, Postgree entre outros.
+&nbsp Para a comunicação e mapemento dos dados com o sistema em si foi utilizado <b>SQLAlchemy</b> que é uma biblioteca de mapeamento objeto-relacional, torna a interação mais organizada alem de gerir melhor os dados manipulados a fim de melhorar o desenpenho do sistema.
 </p>
+
+<h4>Segurança</h4>
+<p>&nbsp
+  A fim de manter a segurança fez-se necessario a utilização de um método de autenticação tornando o sistema mais seguro, sendo assim, optei pela autenticação de dois pontos utilizando o <b>JWT Token</b>, com isto o usuario deve solicitar o token por uma autenticação básica com login e senha para obter assim seu token válido por <b>60 minutos</b> que por sua vez é utilizado em todas as interações da API.
+</p>
+
 
 
