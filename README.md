@@ -51,12 +51,12 @@ Projeto desenvolvido com finalidade de demonstração de habilidade em desenvolv
          <ul>
            <li>Cadastro de Produtos</li>
            <li>Listar produtos</li>
+           <li>Listar pedidos</li>
          </ul>
        </li>
       <li>CLIENTE
          <ul>
            <li>Fazer pedido</li>
-           <li>Listar pedidos</li>
          </ul>
        </li>
      </ul>
@@ -185,6 +185,81 @@ Resposta:
             "publicId": "25fd4f5e-98b7-47be-9328-bd3e0fd3386d"
         }
     ],
+    "status": true
+}
+```
+<h4>5.5. Lista pedido - LOJA</h4>
+ <p>&nbsp
+	Para poder listar um pedio anteriormente é necessário que um cliente tenha feito anteriormente um pedido descrito no tópico 5.6, uma vez feito o pedido o usuario com o numero do pedido podera ver os detalhes do pedido utilizando as configurações abaixo:
+
+  <ul>
+    <li>Rota <br/><b>"/getOrder"</b></li>
+    <li>Metodo <br/><b>"POST"</b></li>
+    <li>Headers
+      <ul>
+        <li>Content Type: <b>application/json</b></li>
+	<li>x-access-token: <b>{{TOKEN}}</b></li>
+      </ul>
+    </li>
+    <li>Body</li>
+  </ul>
+
+```json
+{
+	"orderNumber":"929435245"
+}	
+```
+Resposta:
+```json
+{
+    "message": "OK",
+    "products": [
+        {
+            "amount": 12,
+            "costumer": {
+                "publicId": "9efefb66-6a93-4c69-a0b2-ce06959d2d7d",
+                "userName": "joao"
+            },
+            "orderNumber": "929435245",
+            "product": {
+                "description": "feita de couro sintetico",
+                "name": "bola de futebol",
+                "price": 12.5,
+                "publicId": "998e7544-47db-43e0-b113-cbaae74dfde4"
+            },
+            "publicId": "1b8bd141-a967-4a33-99a0-df2ce196db0e"
+        }
+    ],
+    "status": true
+}
+```
+<h4>5.6. Fazer pedido - CLIENTE</h4>
+ <p>&nbsp
+	Para poder fazer um pedio anteriormente é necessário que a loja tenha feito o cadastro dos produtos como descrito no tópico 5.3, uma vez feito o  cadastro dos produtos o cliente pode efetuar o pedido utilizando as configurações abaixo:
+
+  <ul>
+    <li>Rota <br/><b>"/makeOrder"</b></li>
+    <li>Metodo <br/><b>"POST"</b></li>
+    <li>Headers
+      <ul>
+        <li>Content Type: <b>application/json</b></li>
+	<li>x-access-token: <b>{{TOKEN}}</b></li>
+      </ul>
+    </li>
+    <li>Body</li>
+  </ul>
+
+```json
+[
+	{"publicId_product":"998e7544-47db-43e0-b113-cbaae74dfde4","amount":12}
+
+]	
+```
+Resposta:
+```json
+{
+    "message": "order made successfully!",
+    "orderNumber": "929435245",
     "status": true
 }
 ```
