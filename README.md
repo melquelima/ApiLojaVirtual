@@ -89,7 +89,7 @@ Projeto desenvolvido com finalidade de demonstração de habilidade em desenvolv
 ```
 
  
- <b>OBS:</b> ja existe um usuario criado para teste caso prefira nao criar um, basta utilizar:<br/> <b>user:</b> 'melque'<br/> <b>password:</b> '123'
+ <b>OBS:</b> ja existe um usuario criado para teste caso prefira nao criar um, basta utilizar as credenciais informadas acima no campo <b>Body</b>
 
  
 
