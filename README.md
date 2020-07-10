@@ -71,7 +71,7 @@ Projeto desenvolvido com finalidade de demonstração de habilidade em desenvolv
    Conforme informado no ultimo tópico é necessária a criação do seu usario, para isto é utilizadas as configurações abaixo: 
  
   <ul>
-    <li>Rota <br/><b>"/createUser"</b></li>
+    <li>Rota <br/><b>"https://brasilprv.herokuapp.com/createUser"</b></li>
     <li>Metodo <br/><b>"POST"</b></li>
     <li>Headers
       <ul>
@@ -104,7 +104,7 @@ Resposta:
  <p>&nbsp
 	Com o usuario criado temos que adquirir o token no qual vai nos permitir fazer todas as interações, para isto utilizamos as configurações abaixo:
 <ul>
-    <li>Rota <br/><b>"/getToken"</b></li>
+    <li>Rota <br/><b>"https://brasilprv.herokuapp.com/getToken"</b></li>
     <li>Metodo <br/><b>"GET"</b></li>
     <li>Authorization
       <ul>
@@ -129,7 +129,7 @@ Basta utilizar o token informado nas operações seguintes.
  <p>&nbsp o usuário uma vez cadastrado podemos cadastrar produtos e atribuilos ao perfil, lembrando que apenas perfis do tipo "LOJA" podem cadastrar produtos, para cadastrar um ou "n" produtos utilizamos as configurações abaixo:
 	
   <ul>
-    <li>Rota <br/><b>"/uploadPoducts"</b></li>
+    <li>Rota <br/><b>"https://brasilprv.herokuapp.com/uploadPoducts"</b></li>
     <li>Metodo <br/><b>"POST"</b></li>
     <li>Headers
       <ul>
@@ -158,7 +158,7 @@ Resposta:
  <p>&nbsp Com os produtos uma vez cadastrados voce tem a opção de lista-los do sistema utilizando as configurações abaixo:
 
   <ul>
-    <li>Rota <br/><b>"/getPoducts"</b></li>
+    <li>Rota <br/><b>"https://brasilprv.herokuapp.com/getPoducts"</b></li>
     <li>Metodo <br/><b>"GET"</b></li>
     <li>Headers
       <ul>
@@ -193,7 +193,7 @@ Resposta:
 	Para poder listar um pedio anteriormente é necessário que um cliente tenha feito anteriormente um pedido descrito no tópico 5.6, uma vez feito o pedido o usuario com o numero do pedido podera ver os detalhes do pedido utilizando as configurações abaixo:
 
   <ul>
-    <li>Rota <br/><b>"/getOrder"</b></li>
+    <li>Rota <br/><b>"https://brasilprv.herokuapp.com/getOrder"</b></li>
     <li>Metodo <br/><b>"POST"</b></li>
     <li>Headers
       <ul>
@@ -238,7 +238,7 @@ Resposta:
 	Para poder fazer um pedio anteriormente é necessário que a loja tenha feito o cadastro dos produtos como descrito no tópico 5.3, uma vez feito o  cadastro dos produtos o cliente pode efetuar o pedido utilizando as configurações abaixo:
 
   <ul>
-    <li>Rota <br/><b>"/makeOrder"</b></li>
+    <li>Rota <br/><b>"https://brasilprv.herokuapp.com/makeOrder"</b></li>
     <li>Metodo <br/><b>"POST"</b></li>
     <li>Headers
       <ul>
