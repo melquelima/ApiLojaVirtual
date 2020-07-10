@@ -13,6 +13,8 @@ def create_user(fields):
     user = User.query.filter_by(userName=data['userName']).first()
     if user:
         return {"status":False,"message":"User already exists!"}
+    if not data["perfil"] in ["LOJA","CLIENTE"]:
+        return {"status":False,"message":"User profile not allowed choose between 'LOJA' and 'CLIENTE'!"}
 
     hashed_pwd = GPH(data['password'],method="sha256")
 

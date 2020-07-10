@@ -26,4 +26,5 @@ class OrdersSchema(ma.ModelSchema):
     orderNumber         = fields.String()      
     amount              = fields.Integer()  
     product             = fields.Nested(ProductsSchema)  
+    costumer            = fields.Nested(UsersSchema,only=["publicId","userName"]) 
 

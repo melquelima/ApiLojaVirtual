@@ -28,26 +28,6 @@ def token_required():
     return decorator
 
 
-def token_required_old(f):
-    @wraps(f)
-    def decorated(*args,**kwargs):
-        token = None
-
-        if 'x-access-token' in request.headers:
-            token = request.headers['x-access-token']
-        
-        if not token:
-            return {'message':"Token is missing!"},401
-        try:
-            data = jwt.decode(token,app.config['SECRET_KEY'])
-            user = User.query.filter_by(publicId=data['publicId']).first()
-        except:
-            return {'status':False,'message':"Token is invalid!"},401
-        
-        return f(user=user,*args,**kwargs)
-    return decorated
-
-
 def fields_required(lista,isList = False):
     def decorator(function):
         @wraps(function)

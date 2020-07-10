@@ -18,7 +18,7 @@ def make_order(user,fields):
     dbList = []
     for item in fields:
         publicId    = str(uuid.uuid4())
-        orde = Orders(publicId=publicId,publicId_product=item['publicId_product'],orderNumber=orderNumber,amount=item["amount"])
+        orde = Orders(publicId=publicId,publicId_product=item['publicId_product'],orderNumber=orderNumber,amount=item["amount"],publicId_costumer=user.publicId)
         valid = orde.is__valid()
         if not valid[0]:
             return {"status":False,"message":valid[1]}
@@ -28,7 +28,7 @@ def make_order(user,fields):
         db.session.add(item)
 
     db.session.commit()
-    return {"status":True,"message":"order made successfully!"}
+    return {"status":True,"message":"order made successfully!",'orderNumber':orderNumber}
 
 @app.route('/getOrder',methods=['POST'])
 @token_required()

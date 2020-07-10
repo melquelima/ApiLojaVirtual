@@ -48,13 +48,16 @@ class Orders(db.Model):
 
     id                  = db.Column(db.Integer,primary_key=True)
     publicId            = db.Column(db.String(50),unique=True,nullable=False)
+    publicId_costumer   = db.Column(db.String(50),ForeignKey('users.publicId'))
     publicId_product    = db.Column(db.String(50),ForeignKey('products.publicId'))
     orderNumber         = db.Column(db.String(50),nullable=False)
     amount              = db.Column(db.Float,nullable=False)
     product             = db.relationship("Products",foreign_keys=publicId_product)
+    costumer            = db.relationship("User",foreign_keys=publicId_costumer)
 
-    def __init__(self,publicId,publicId_product,orderNumber,amount):
+    def __init__(self,publicId,publicId_costumer,publicId_product,orderNumber,amount):
         self.publicId           = publicId   
+        self.publicId_costumer  = publicId_costumer
         self.publicId_product   = publicId_product     
         self.orderNumber        = orderNumber      
         self.amount             = amount
